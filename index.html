@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Využití AI v materiálovém inženýrství | FST ZČU</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #00aaff;
+            --secondary-color: #00eaff;
+            --background-color: #121212;
+            --surface-color: #1e1e1e;
+            --text-color: #e0e0e0;
+            --header-color: #ffffff;
+            --muted-color: #888888;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(45deg, rgba(0, 44, 66, 0.8), rgba(18, 18, 18, 0.9)), url('https://via.placeholder.com/1500x500.png/121212?text=AI+in+Materials+Science') no-repeat center center/cover;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--header-color);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: var(--surface-color);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            background-color: var(--surface-color);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .notice-box {
+            background-color: #2a2a2a;
+            border-left-color: #ffaa00;
+        }
+
+        .notice-box h2 {
+            color: #ffaa00;
+            border-bottom-color: #ffaa00;
+        }
+
+        .syllabus-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .semester {
+            background-color: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .semester h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .semester ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .semester li {
+            background-color: var(--surface-color);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--primary-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .semester li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        
+        .semester li strong {
+            display: block;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .semester li span {
+            font-size: 0.9em;
+            color: var(--muted-color);
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .objective-item, .tool-item {
+            background-color: #2a2a2a;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .objective-item .icon, .tool-item .icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: var(--surface-color);
+            color: var(--muted-color);
+            border-top: 1px solid #333;
+        }
+
+        cite {
+            font-style: normal;
+            font-size: 0.7em;
+            color: var(--primary-color);
+            opacity: 0.6;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Využití AI v materiálovém inženýrství</h1>
+            <p>Nový dvousemestrální předmět na Fakultě strojní ZČU v Plzni</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">O předmětu</a>
+        <a href="#syllabus">Sylabus</a>
+        <a href="#objectives">Cíle</a>
+        <a href="#tools">Nástroje</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+
+    <main class="container">
+
+        <section id="about">
+            <h2>O předmětu</h2>
+            <p>Vítejte v kurzu, který vás provede fascinujícím světem umělé inteligence a jejího využití v materiálovém inženýrství. [cite_start]V dnešní době se datově řízený výzkum stává čtvrtým paradigmatem vědy a tento předmět vám poskytne klíčové znalosti a praktické dovednosti k tomu, abyste mohli tyto moderní nástroje využívat[cite: 1032]. [cite_start]Společně prozkoumáme, jak algoritmy strojového a hlubokého učení akcelerují objevování nových materiálů, optimalizují výrobní procesy a pomáhají odhalovat komplexní vztahy mezi strukturou a vlastnostmi materiálů[cite: 542, 2083]. Cílem je propojit vaše doménové znalosti s výkonnými AI technikami a připravit vás na budoucnost materiálového výzkumu.</p>
+        </section>
+
+        <section class="notice-box">
+            <h2>Důležité organizační informace (AR 2025/26)</h2>
+            <p>Od příštího akademického roku 2025/26 (ZS + LS) budu učit předmět ohledně využití umělé inteligence v materiálovém inženýrství. Vzhledem k tomu, že jsem na FST teprve krátce, nebyl tento předmět ještě plně akreditován a budu ho tedy vyučovat v rámci předmětů <strong>Materiálová chemie 1</strong> (KMM/MCH1) a <strong>Materiálová chemie 2</strong> (KMM/MCH2). Předměty si prosím zapisujte nezávisle na tom, zda se Vám hodí do rozvrhu, na začátku semestru se vždy operativně domluvíme na čase, který bude vyhovovat všem.</p>
+        </section>
+
+
+        <section id="syllabus">
+            <h2>Sylabus předmětu</h2>
+            <div class="syllabus-container">
+                <div class="semester">
+                    <h3>Zimní semestr: Základy AI a strojového učení</h3>
+                    <ul>
+                        <li><strong>Týden 1:</strong> Úvod do AI v materiálovém inženýrství. [cite_start]Historie, motivace a 4. paradigma vědy[cite: 1032, 2082]. [cite_start]Základní koncepty ML. [cite: 2097]</li>
+                        <li><strong>Týden 2:</strong> Paradigmata strojového učení. [cite_start]Učení s učitelem, bez učitele, posilované a další moderní přístupy (self-supervised, federated). [cite: 1643, 1653]</li>
+                        <li><strong>Týden 3:</strong> Ekosystém Pythonu pro AI. [cite_start]Seznámení s klíčovými knihovnami NumPy, Pandas a Scikit-learn. [cite: 3021, 3030] Praktické cvičení.</li>
+                        [cite_start]<li><strong>Týden 4:</strong> Klasické metody ML I. Lineární a logistická regrese, regularizační techniky (Ridge, LASSO) pro predikci vlastností. [cite: 2535, 2569, 2549]</li>
+                        <li><strong>Týden 5:</strong> Klasické metody ML II. Support Vector Machines (SVM) a rozhodovací stromy. [cite_start]Princip maximální marže a jádrové funkce. [cite: 2558, 2580]</li>
+                        <li><strong>Týden 6:</strong> Ansámblové metody. [cite_start]Bagging (Random Forest) a Boosting (AdaBoost, Gradient Boosting) pro robustní predikce. [cite: 196, 2544, 2599]</li>
+                        <li><strong>Týden 7:</strong> Úvod do neuronových sítí a hlubokého učení. [cite_start]Perceptron, MLP, princip zpětné propagace chyby a aktivační funkce. [cite: 540, 547, 336]</li>
+                        <li><strong>Týden 8:</strong> Trénink hlubokých sítí. [cite_start]Optimalizátory (SGD, Adam), normalizace (Batch Norm) a regularizace (Dropout). [cite: 425, 2720]</li>
+                        <li><strong>Týden 9:</strong> Učení bez učitele v praxi. [cite_start]Shlukování (K-means, DBSCAN) pro identifikaci fází a redukce dimenze (PCA) pro analýzu dat. [cite: 2539, 2621, 2637]</li>
+                        <li><strong>Týden 10:</strong> Bayesovské metody a kvantifikace nejistoty. [cite_start]Bayesova věta, Gaussovské procesy jako surrogátní modely. [cite: 3278, 3316]</li>
+                        <li><strong>Týden 11:</strong> Bayesovské hluboké učení. [cite_start]Princip BNN, metody aproximace (VI, MC Dropout) pro odhad spolehlivosti predikcí NN. [cite: 3325, 3360]</li>
+                        <li><strong>Týden 12:</strong> Praktický workshop. [cite_start]Tvorba kompletního ML pipeline od dat po model v Pythonu a Scikit-learn. [cite: 3108]</li>
+                        <li><strong>Týden 13:</strong> Shrnutí a příprava na projekt. Zadání semestrálních prací.</li>
+                    </ul>
+                </div>
+                <div class="semester">
+                    <h3>Letní semestr: Pokročilé AI architektury a aplikace</h3>
+                    <ul>
+                        <li><strong>Týden 1:</strong> Konvoluční neuronové sítě (CNN). [cite_start]Princip konvoluce, poolingu a architektury (LeNet, AlexNet, ResNet). [cite: 2717, 2730, 2724]</li>
+                        <li><strong>Týden 2:</strong> Aplikace CNN. [cite_start]Analýza a segmentace mikrostruktur, detekce defektů z obrazových dat. [cite: 563, 640, 1201]</li>
+                        <li><strong>Týden 3:</strong> Rekurentní neuronové sítě (RNN). [cite_start]Architektury LSTM a GRU pro zpracování sekvenčních dat (časové řady, procesní historie). [cite: 5, 10]</li>
+                        <li><strong>Týden 4:</strong> Grafové neuronové sítě (GNN). [cite_start]Princip "message passing", modely GCN a GAT pro data s grafovou strukturou. [cite: 2853, 2874]</li>
+                        <li><strong>Týden 5:</strong> Aplikace GNN v materiálech. [cite_start]Predikce vlastností z krystalových a molekulárních grafů (CGCNN, MEGNet). [cite: 2865, 2927]</li>
+                        <li><strong>Týden 6:</strong> Architektura Transformer a mechanismus pozornosti (Self-Attention). [cite_start]Srovnání s RNN, výhody pro dlouhé sekvence. [cite: 1966, 377]</li>
+                        [cite_start]<li><strong>Týden 7:</strong> Generativní modely I. Variational Autoencoders (VAE) a Generative Adversarial Networks (GAN) pro inverzní návrh materiálů. [cite: 840, 854]</li>
+                        <li><strong>Týden 8:</strong> Generativní modely II. [cite_start]Difúzní modely pro generování nových krystalových struktur a mikrostruktur. [cite: 844, 397]</li>
+                        <li><strong>Týden 9:</strong> Fyzikálně-informované neuronové sítě (PINNs). [cite_start]Integrace fyzikálních zákonů (PDE) do ztrátové funkce pro robustnější modely. [cite: 3436, 3445]</li>
+                        <li><strong>Týden 10:</strong> Aplikace AI v aditivní výrobě. [cite_start]Detekce defektů v reálném čase a optimalizace procesních parametrů 3D tisku. [cite: 1151, 1153]</li>
+                        <li><strong>Týden 11:</strong> Autonomní experimentování a "Self-Driving Labs". [cite_start]Aktivní učení a Bayesovská optimalizace pro urychlení objevů. [cite: 645, 1064, 1711]</li>
+                        <li><strong>Týden 12:</strong> Etika, interpretovatelnost (XAI) a MLOps v praxi. [cite_start]Nástroje SHAP, LIME a platformy jako MLflow pro správu modelů. [cite: 2188, 3059]</li>
+                        <li><strong>Týden 13:</strong> Prezentace semestrálních projektů a závěrečná diskuze.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="objectives">
+            <h2>Co se v předmětu naučíte?</h2>
+            <div class="objectives-grid">
+                <div class="objective-item">
+                    <div class="icon">📈</div>
+                    [cite_start]<p><strong>Aplikovat klasické i moderní ML metody</strong> na reálná materiálová data pro úlohy regrese a klasifikace. [cite: 2101]</p>
+                </div>
+                <div class="objective-item">
+                    <div class="icon">🧠</div>
+                    [cite_start]<p><strong>Navrhovat a trénovat hluboké neuronové sítě</strong> (CNN, GNN, Transformery) pro analýzu obrazů mikrostruktur a krystalových mřížek. [cite: 370, 388]</p>
+                </div>
+                <div class="objective-item">
+                    <div class="icon">🔬</div>
+                    [cite_start]<p><strong>Využívat generativní modely</strong> pro inverzní návrh materiálů a akcelerovat tak objevování nových slitin a sloučenin. [cite: 1058, 630]</p>
+                </div>
+                 <div class="objective-item">
+                    <div class="icon">🤖</div>
+                    [cite_start]<p><strong>Rozumět principům autonomních laboratoří</strong> a technikám aktivního učení pro efektivní plánování experimentů. [cite: 645, 1906]</p>
+                </div>
+                <div class="objective-item">
+                    <div class="icon">🐍</div>
+                    [cite_start]<p><strong>Prakticky pracovat v ekosystému Pythonu</strong> s klíčovými knihovnami jako Scikit-learn, PyTorch/TensorFlow a Matminer. [cite: 3015, 3066]</p>
+                </div>
+                <div class="objective-item">
+                    <div class="icon">🛠️</div>
+                    [cite_start]<p><strong>Používat MLOps nástroje</strong> (např. MLflow) pro správu, verzování a zajištění reprodukovatelnosti vašich AI projektů. [cite: 3059]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools">
+            <h2>Nástroje a technologie</h2>
+            <div class="objectives-grid">
+                <div class="tool-item">
+                    <div class="icon">
+                        <img src="https://via.placeholder.com/64/FFFFFF/000000?text=Py" alt="Python logo" style="border-radius:50%;">
+                    </div>
+                    <p>Python</p>
+                </div>
+                <div class="tool-item">
+                    <div class="icon">
+                        <img src="https://via.placeholder.com/64/FFFFFF/000000?text=TF" alt="TensorFlow logo" style="border-radius:50%;">
+                    </div>
+                    <p>TensorFlow & Keras</p>
+                </div>
+                <div class="tool-item">
+                    <div class="icon">
+                        <img src="https://via.placeholder.com/64/FFFFFF/000000?text=PT" alt="PyTorch logo" style="border-radius:50%;">
+                    </div>
+                    <p>PyTorch</p>
+                </div>
+                <div class="tool-item">
+                    <div class="icon">
+                        <img src="https://via.placeholder.com/64/FFFFFF/000000?text=SK" alt="Scikit-learn logo" style="border-radius:50%;">
+                    </div>
+                    <p>Scikit-learn</p>
+                </div>
+                <div class="tool-item">
+                    <div class="icon">
+                        <img src="https://via.placeholder.com/64/FFFFFF/000000?text=MT" alt="Matminer logo" style="border-radius:50%;">
+                    </div>
+                    <p>Pymatgen & Matminer</p>
+                </div>
+                 <div class="tool-item">
+                    <div class="icon">
+                        <img src="https://via.placeholder.com/64/FFFFFF/000000?text=ML" alt="MLflow logo" style="border-radius:50%;">
+                    </div>
+                    <p>MLflow</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Vyučující a kontakt</h2>
+            <p><strong>Vyučující:</strong> [Vaše Jméno a Tituly]</p>
+            <p><strong>Katedra:</strong> Katedra materiálu a strojírenské metalurgie (KMM)</p>
+            <p><strong>Email:</strong> [Váš email]</p>
+            <p><strong>Konzultační hodiny:</strong> Dle individuální domluvy.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 | Vytvořeno pro Západočeskou univerzitu v Plzni, Fakultu strojní</p>
+        </div>
+    </footer>
+
+</body>
+</html>
