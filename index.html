@@ -127,7 +127,7 @@
             display: inline-block;
             padding: 1rem 2.5rem;
             background: var(--gradient-2);
-            color: var(--background-color);
+            color: #0a0a0a; /* Dark text for contrast on gradient */
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
@@ -314,6 +314,9 @@
             text-align: center;
             transition: all 0.3s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .objective-card:hover {
             transform: translateY(-8px);
@@ -322,9 +325,7 @@
         .objective-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: var(--gradient-2);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary-color); /* FIX: Using solid color for reliability */
         }
         .objective-title {
             font-size: 1.3rem;
